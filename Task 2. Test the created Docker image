@@ -1,3 +1,13 @@
+Task: 
+Launch a container using the image valkyrie-prod:v0.0.1.
+You need to map the host’s port 8080 to port 8080 on the container.
+Add & to the end of the command to cause the container to run in the background.
+When your container is running you will see the page by Web Preview.
+
+
+
+Code:
+
 # Build image with your specific tag
 docker build -t valkyrie-prod:v0.0.3 .
 
