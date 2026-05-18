@@ -1,0 +1,8 @@
+Run the container in the background, mapping port 8080.
+
+Command line: 
+docker run -p 8080:8080 --name valkyrie-app-test valkyrie-prod:v0.0.3 &
+
+
+
+//You can optionally use the Web Preview feature on port 8080 in Cloud Shell to see your app running live before proceeding.
