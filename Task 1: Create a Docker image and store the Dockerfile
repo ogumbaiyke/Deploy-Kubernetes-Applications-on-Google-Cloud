@@ -1,3 +1,5 @@
+First, initialize the tracking script, extract the source code, and construct your Dockerfile.
+
 1. To install the script. open cloud shell and run the following command in the cloud shell:
 
 source <(gsutil cat gs://spls/gsp318/script.sh)
@@ -33,7 +35,7 @@ docker images
 
 
                                                       OR
-
+You can copy all the commands at once and then execute in the cloud shell.
 
 
 # 1. Initialize the lab progress check script
@@ -61,6 +63,5 @@ docker images
 
 
 
-4
 
 
