@@ -2,26 +2,20 @@ Extract your internal Google Cloud project parameters dynamically, construct the
 configure Docker's secure handshake, and dispatch the asset.
 
 Code:
-
-# 1. Set environment variables dynamically
-export PROJECT_ID=$(gcloud config get-value project)
-export REGION=us-west1
-export REPO_NAME=valkyrie-repository
-
-# 2. Create the Artifact Registry repository
-gcloud artifacts repositories create $REPO_NAME \
+//Change the parameters accordingly.
+# Create the repository in us-central1
+gcloud artifacts repositories create valkyrie-repository \
     --repository-format=docker \
-    --location=$REGION \
-    --description="Valkyrie Docker Repository"
+    --location=us-central1
 
-# 3. Authenticate Docker to communicate securely with Artifact Registry
-gcloud auth configure-docker $REGION-docker.pkg.dev --quiet
+# Authenticate Docker for us-central1
+gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
 
-# 4. Re-tag your image matching the required structural schema
-docker tag valkyrie-prod:v0.0.3 $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/valkyrie-prod:v0.0.3
+# Tag the image with your exact project details
+docker tag valkyrie-prod:v0.0.3 us-central1-docker.pkg.dev/qwiklabs-gcp-01-5ab2283a3c9e/valkyrie-repository/valkyrie-prod:v0.0.3
 
-# 5. Push the built image to your repository
-docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/valkyrie-prod:v0.0.3
+# Push image to your registry
+docker push us-central1-docker.pkg.dev/qwiklabs-gcp-01-5ab2283a3c9e/valkyrie-repository/valkyrie-prod:v0.0.3
 
 
 
