@@ -1,0 +1,66 @@
+1. To install the script. open cloud shell and run the following command in the cloud shell:
+
+source <(gsutil cat gs://spls/gsp318/script.sh)
+
+
+
+2. Use Cloud Shell to copy the valkyrie-app source code into the ~/valkyrie-app directory. You can use the following command:
+
+gsutil cp gs://spls/gsp318/valkyrie-app.tgz .
+tar -xzf valkyrie-app.tgz
+cd valkyrie-app
+
+
+
+3. The app source code is in valkyrie-app/source.
+
+Create valkyrie-app/Dockerfile and add the configuration below:
+FROM golang:1.10
+WORKDIR /go/src/app
+COPY source .
+RUN go install -v
+ENTRYPOINT ["app","-single=true","-port=8080"]
+
+4. Use valkyrie-app/Dockerfile to create a Docker image called valkyrie-prod with the tag v0.0.3.
+
+Verify that the Docker image was created by running the following command:
+
+docker images
+
+
+
+
+
+
+                                                      OR
+
+
+
+# 1. Initialize the lab progress check script
+source <(gsutil cat gs://spls/gsp318/script.sh)
+
+# 2. Extract the application source code
+gsutil cp gs://spls/gsp318/valkyrie-app.tgz .
+tar -xzf valkyrie-app.tgz
+cd valkyrie-app
+
+# 3. Create the Dockerfile with the required configuration
+cat <<EOF > Dockerfile
+FROM golang:1.10
+WORKDIR /go/src/app
+COPY source .
+RUN go install -v
+ENTRYPOINT ["app","-single=true","-port=8080"]
+EOF
+
+# 4. Build the image with the mandated image name and tag
+docker build -t valkyrie-prod:v0.0.3 .
+
+# 5. Verify the image creation
+docker images
+
+
+
+4
+
+
