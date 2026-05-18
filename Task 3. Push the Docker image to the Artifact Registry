@@ -6,10 +6,10 @@ Code:
 # Create the repository in us-central1
 gcloud artifacts repositories create valkyrie-repository \
     --repository-format=docker \
-    --location=us-central1
+    --location=us-central1                                            
 
 # Authenticate Docker for us-central1
-gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
+gcloud auth configure-docker us-central1-docker.pkg.dev
 
 # Tag the image with your exact project details
 docker tag valkyrie-prod:v0.0.3 us-central1-docker.pkg.dev/qwiklabs-gcp-01-5ab2283a3c9e/valkyrie-repository/valkyrie-prod:v0.0.3
