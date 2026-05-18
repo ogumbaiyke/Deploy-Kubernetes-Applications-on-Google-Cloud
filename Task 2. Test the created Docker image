@@ -1,8 +1,7 @@
-Run the container in the background, mapping port 8080.
+# Build image with your specific tag
+docker build -t valkyrie-prod:v0.0.3 .
 
-Command line: 
-docker run -p 8080:8080 --name valkyrie-app-test valkyrie-prod:v0.0.3 &
-
-
+# Run test container in background, mapping port 8080.
+docker run -p 8080:8080 valkyrie-prod:v0.0.3 &
 
 //You can optionally use the Web Preview feature on port 8080 in Cloud Shell to see your app running live before proceeding.
