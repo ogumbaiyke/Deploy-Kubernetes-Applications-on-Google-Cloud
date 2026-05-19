@@ -1,4 +1,4 @@
-Extract your internal Google Cloud project parameters dynamically, construct the Artifact Registry repository, 
+121Extract your internal Google Cloud project parameters dynamically, construct the Artifact Registry repository, 
 configure Docker's secure handshake, and dispatch the asset.
 
 Code:
