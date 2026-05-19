@@ -4,18 +4,18 @@ configure Docker's secure handshake, and dispatch the asset.
 Code:
 //Change the parameters accordingly.
 # Create the repository in us-central1
-gcloud artifacts repositories create valkyrie-repository \
+gcloud artifacts repositories create valkyrie-repo \
     --repository-format=docker \
-    --location=us-central1                                            
+    --location=us-west1                                            
 
 # Authenticate Docker for us-central1
-gcloud auth configure-docker us-central1-docker.pkg.dev
+gcloud auth configure-docker us-west1-docker.pkg.dev
 
 # Tag the image with your exact project details
-docker tag valkyrie-prod:v0.0.3 us-central1-docker.pkg.dev/qwiklabs-gcp-01-5ab2283a3c9e/valkyrie-repository/valkyrie-prod:v0.0.3
+docker tag valkyrie-prod:v0.0.2 us-west1-docker.pkg.dev/qwiklabs-gcp-01-dfc96ceb2818/valkyrie-repo/valkyrie-prod:v0.0.2
 
 # Push image to your registry
-docker push us-central1-docker.pkg.dev/qwiklabs-gcp-01-5ab2283a3c9e/valkyrie-repository/valkyrie-prod:v0.0.3
+docker push us-west1-docker.pkg.dev/qwiklabs-gcp-01-dfc96ceb2818/valkyrie-repo/valkyrie-prod:v0.0.2
 
 
 
