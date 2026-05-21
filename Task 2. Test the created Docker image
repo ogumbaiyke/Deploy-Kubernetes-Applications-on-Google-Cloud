@@ -9,9 +9,9 @@ When your container is running you will see the page by Web Preview.
 Code:
 
 # Build image with your specific tag
-docker build -t valkyrie-prod:v0.0.1 .
+docker build -t valkyrie-prod:v0.0.3 .
 
 # Run test container in background, mapping port 8080.
-docker run -p 8080:8080 valkyrie-prod:v0.0.1 &
+docker run -p 8080:8080 valkyrie-prod:v0.0.3 &
 
 //You can optionally use the Web Preview feature on port 8080 in Cloud Shell to see your app running live before proceeding.
