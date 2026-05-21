@@ -5,15 +5,15 @@ Code:
 //Change the parameters accordingly.
 //Parameters include project id, repository name, tag name, and the region.
 # Create the repository in us-central1
-gcloud artifacts repositories create valkyrie-repository \
+gcloud artifacts repositories create valkyrie-docker-repo \
     --repository-format=docker \
-    --location=us-central1                                            
+    --location=us-us-east1                                            
 
 # Authenticate Docker for us-central1
-gcloud auth configure-docker us-central1-docker.pkg.dev
+gcloud auth configure-docker us-east1-docker.pkg.dev
 
 # Tag the image with your exact project details
-docker tag valkyrie-prod:v0.0.2 us-central1-docker.pkg.dev/qwiklabs-gcp-01-6f21ec8213f6/valkyrie-repository/valkyrie-prod:v0.0.2
+docker tag valkyrie-prod:v0.0.1 us-east1-docker.pkg.dev/qwiklabs-gcp-03-c3d8f087d4b3/valkyrie-repository/valkyrie-prod:v0.0.2
 
 # Push image to your registry
 docker push us-central1-docker.pkg.dev/qwiklabs-gcp-01-6f21ec8213f6/valkyrie-repository/valkyrie-prod:v0.0.2
