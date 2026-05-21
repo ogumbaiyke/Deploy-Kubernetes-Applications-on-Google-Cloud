@@ -13,10 +13,10 @@ gcloud artifacts repositories create valkyrie-docker-repo \
 gcloud auth configure-docker us-east1-docker.pkg.dev
 
 # Tag the image with your exact project details
-docker tag valkyrie-prod:v0.0.1 us-east1-docker.pkg.dev/qwiklabs-gcp-03-c3d8f087d4b3/valkyrie-repository/valkyrie-prod:v0.0.2
+docker tag valkyrie-prod:v0.0.1 us-east1-docker.pkg.dev/qwiklabs-gcp-03-c3d8f087d4b3/valkyrie-repository/valkyrie-prod:v0.0.1
 
 # Push image to your registry
-docker push us-central1-docker.pkg.dev/qwiklabs-gcp-01-6f21ec8213f6/valkyrie-repository/valkyrie-prod:v0.0.2
+docker push us-east1-docker.pkg.dev/qwiklabs-gcp-03-c3d8f087d4b3/valkyrie-repository/valkyrie-prod:v0.0.1
 
 
 
